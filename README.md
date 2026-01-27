@@ -14,13 +14,18 @@ This tool is designed to be fast, safe, and easy to use while handling large bat
 
 Resolvify is **built specifically for Linux**.
 
-- Linux file paths
-- Linux process handling
-- Linux shutdown support
+- Linux file paths  
+- Linux process handling  
+- Linux shutdown support  
 
 Windows and macOS are **not supported** by this version.
-**If you are a nerd, go ahead and make a windows version yourself.**
-**This is open source, Make a fork and we will put the branch here.**
+
+If you enjoy porting tools or improving cross-platform support,  
+feel free to create a Windows or macOS version.
+
+This project is **open source**.  
+Fork it, experiment, and share your work. Community contributions are welcome,  
+and notable forks can be linked here.
 
 ---
 
