@@ -19,6 +19,8 @@ Resolvify is **built specifically for Linux**.
 - Linux shutdown support
 
 Windows and macOS are **not supported** by this version.
+**If you are a nerd, go ahead and make a windows version yourself.**
+**This is open source, Make a fork and we will put the branch here.**
 
 ---
 
