@@ -1,100 +1,139 @@
-# 🎬 Resolvify 1.0 
+Here’s the **Markdown code**, clean and ready to paste into a `README.md`. Content preserved, just properly formatted.
+
+````md
+# 🎬 Resolvify 1.0
+
 ## A (TESTED WORKING) Linux-only OBS to DaVinci Resolve video converter
 
-Resolvify exists for one simple reason:
-
-Sometimes videos recorded in OBS will not import correctly into DaVinci Resolve on Linux.  
+Resolvify exists for one simple reason: sometimes videos recorded in OBS will not import correctly into DaVinci Resolve on Linux.  
 Resolvify converts those recordings into a format that Resolve can read reliably.
 
 This tool is designed to be fast, safe, and easy to use while handling large batches of video files.
 
 ---
 
-## 🐧 Linux Only
+## 🐧 Linux Only (Windows/Mac users, look away!)
 
-Resolvify is **built specifically for Linux**.
+Resolvify is built specifically for Linux environments  
+(file paths, process handling, and shutdown commands).
 
-- Linux file paths  
-- Linux process handling  
-- Linux shutdown support  
+**IMPORTANT:**  
+Windows and macOS are **NOT supported**.
 
-Windows and macOS are **not supported** by this version.
+If you are looking for a solution on those platforms, check out:
+- **Shutter Encoder**
+- **HandBrake**
 
-If you enjoy porting tools or improving cross-platform support,  
-feel free to create a Windows or macOS version.
-
-This project is **open source**.  
-Fork it, experiment, and share your work. Community contributions are welcome,  
-and notable forks can be linked here.
+If you enjoy porting tools, feel free to fork this project and make it cross-platform.
 
 ---
 
-## 🧠 What Resolvify Does
+## 🛠 Installation (Arch Linux)
 
-- Converts OBS recordings into DaVinci Resolve–compatible `.mov` files
-- Uses DNxHR LB video codec
-- Uses uncompressed PCM audio
-- Verifies converted files before removing originals
-- Automatically cleans up failed conversions
-- Processes multiple videos at the same time
-- Displays live progress bars and time remaining
-- Optional automatic shutdown after overnight runs
+### Install System Dependencies
+
+```bash
+sudo pacman -S ffmpeg python-rich tk
+pip install customtkinter --break-system-packages
+````
 
 ---
 
-## 🧰 Output Format
+### Setup the Scripts
 
-- Container: `.mov`
-- Video Codec: DNxHR LB
-- Pixel Format: yuv422p
-- Audio Codec: pcm_s16le
+To run Resolvify from anywhere, place the scripts in `/usr/local/bin`.
 
-These settings are widely supported and work well with DaVinci Resolve.
+#### Make them executable
 
----
+```bash
+chmod +x resolvify resolvify-gui
+```
 
-## ⚡ Modes
+#### Move to system bin
 
-### Quick Mode
-- Skips deep verification
-- Faster processing
-- Best for trusted recordings
-
-### Safe Mode (Default)
-- Verifies codec presence
-- Verifies duration
-- Ensures file integrity
-- Prevents silent corruption
+```bash
+sudo mv resolvify /usr/local/bin/
+sudo mv resolvify-gui /usr/local/bin/
+```
 
 ---
 
-## 📁 File Handling
+### Create Desktop Shortcut
 
-- Converted videos are placed into a `Done/` folder
-- Original files are deleted **only after successful verification**
-- Failed outputs are automatically removed
+To find Resolvify in your App Menu (KDE, GNOME, etc.), create the following file:
+
+`~/.local/share/applications/resolvify.desktop`
+
+```ini
+[Desktop Entry]
+Name=Resolvify
+Exec=/usr/local/bin/resolvify-gui
+Icon=video-x-generic
+Type=Application
+Terminal=false
+Categories=Video;
+```
 
 ---
 
-## 📂 Supported Input Formats
+## 🚀 How to Use
+
+### The GUI Dashboard (`resolvify-gui`)
+
+Perfect for the “set it and forget it” workflow.
+
+* **Pick Folder**: Choose where your OBS clips live
+* **Toggles**: Enable Quick Mode, Auto-Delete, or Overnight Shutdown
+* **Launch**: Clicking Launch opens a Kitty terminal window showing real-time progress
+
+---
+
+### The CLI Engine (`resolvify`)
+
+For terminal users.
+
+* **Interactive**:
+  Just run:
+
+  ```bash
+  resolvify
+  ```
+
+  and follow the prompts.
+
+* **Automated**:
+  Run with flags for scripting:
+
+  ```bash
+  resolvify --path "/home/user/Videos" --delete --quick
+  ```
+
+---
+
+## ✨ Features & Output
+
+* **Format**: Converts to `.mov` using DNxHR LB and PCM audio
+* **Safety**: Verifies file duration and integrity before deleting originals
+* **Parallel Processing**: Handles multiple videos simultaneously
+* **Cleanup**: Automatically removes failed or corrupted output files
+* **Overnight Mode**: Can automatically shut down your computer when finished
+
+---
+
+## 📂 Supported Inputs
 
 Resolvify scans for:
-- `.mp4`
-- `.mkv`
-- `.mov`
+
+* `.mp4`
+* `.mkv`
+* `.mov`
 
 (case-insensitive)
 
----
+```
 
-## 🖥 Requirements
-
-- Linux
-- Python 3
-- FFmpeg
-- FFprobe
-- python-rich
-
-Install the Rich library on Arch Linux:
-```bash
-sudo pacman -S python-rich
+If you want, I can also:
+- tighten this for a release page
+- add screenshots sections
+- or split CLI vs GUI docs cleanly
+```
