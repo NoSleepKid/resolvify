@@ -1,5 +1,5 @@
-# 🎬 Resolvify 1.6
-## A Linux-only OBS to DaVinci Resolve video converter
+# 🎬 Resolvify 1.0 
+## A (TESTED WORKING) Linux-only OBS to DaVinci Resolve video converter
 
 Resolvify exists for one simple reason:
 
