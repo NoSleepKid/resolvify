@@ -1,71 +1,77 @@
 # 🎬 Resolvify 1.6
-## DaVinci Resolve stops crying. OBS footage behaves.
+## A Linux-only OBS to DaVinci Resolve video converter
 
-Have you ever recorded a video in OBS, imported it into DaVinci Resolve…  
-and Resolve just refuses to read it like it’s cursed?
+Resolvify exists for one simple reason:
 
-Yeah. Same problem.  
-So I made **Resolvify**.
+Sometimes videos recorded in OBS will not import correctly into DaVinci Resolve on Linux.  
+Resolvify converts those recordings into a format that Resolve can read reliably.
 
-A fast, file-safe, FFmpeg-powered converter that turns OBS recordings into **Resolve-friendly `.mov` files** without nuking your data.
-
-⚠️ VIBE CODED WARNING ⚠️
+This tool is designed to be fast, safe, and easy to use while handling large batches of video files.
 
 ---
 
-## 🧠 What This Does
+## 🐧 Linux Only
 
-- Converts OBS recordings into **DaVinci Resolve–readable files**
-- Uses **DNxHR LB** video codec (editor approved)
-- Uses **PCM audio** (no desync, no bullshit)
-- Verifies outputs before deleting originals
+Resolvify is **built specifically for Linux**.
+
+- Linux file paths
+- Linux process handling
+- Linux shutdown support
+
+Windows and macOS are **not supported** by this version.
+
+---
+
+## 🧠 What Resolvify Does
+
+- Converts OBS recordings into DaVinci Resolve–compatible `.mov` files
+- Uses DNxHR LB video codec
+- Uses uncompressed PCM audio
+- Verifies converted files before removing originals
 - Automatically cleans up failed conversions
-- Runs multiple conversions at once
-- Shows real progress bars and time remaining
-- Can shut your system down after an overnight run
+- Processes multiple videos at the same time
+- Displays live progress bars and time remaining
+- Optional automatic shutdown after overnight runs
 
 ---
 
-## 🧰 Features
+## 🧰 Output Format
 
-### ✅ Resolve-Compatible Output
-- Codec: DNxHR LB
-- Pixel Format: yuv422p
-- Audio: pcm_s16le
 - Container: `.mov`
+- Video Codec: DNxHR LB
+- Pixel Format: yuv422p
+- Audio Codec: pcm_s16le
 
-Resolve eats this instantly.
+These settings are widely supported and work well with DaVinci Resolve.
 
-### ⚡ Quick Mode
+---
+
+## ⚡ Modes
+
+### Quick Mode
 - Skips deep verification
-- Faster as hell
-- Best for trusted files
+- Faster processing
+- Best for trusted recordings
 
-### 🧪 Safe Mode (Default)
-- Verifies codec
+### Safe Mode (Default)
+- Verifies codec presence
 - Verifies duration
-- Verifies file integrity
-- No silent corruption
+- Ensures file integrity
+- Prevents silent corruption
 
-### 📁 Clean File Handling
-- Output goes into a `Done/` folder
-- Originals deleted **only after success**
-- Failed outputs are auto-removed
+---
 
-### 🧵 Multithreaded
-- Converts multiple videos at once
-- Keeps CPU busy, not stupid
+## 📁 File Handling
 
-### 🌙 Overnight Mode
-- Let it run while you sleep
-- Auto shutdown when finished
-- Wake up with free disk space
+- Converted videos are placed into a `Done/` folder
+- Original files are deleted **only after successful verification**
+- Failed outputs are automatically removed
 
 ---
 
 ## 📂 Supported Input Formats
 
-Scans for:
+Resolvify scans for:
 - `.mp4`
 - `.mkv`
 - `.mov`
@@ -78,10 +84,10 @@ Scans for:
 
 - Linux
 - Python 3
-- `ffmpeg`
-- `ffprobe`
-- `python-rich`
+- FFmpeg
+- FFprobe
+- python-rich
 
-Install on Arch:
+Install the Rich library on Arch Linux:
 ```bash
 sudo pacman -S python-rich
