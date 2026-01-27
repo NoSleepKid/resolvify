@@ -1,6 +1,3 @@
-Here’s the **Markdown code**, clean and ready to paste into a `README.md`. Content preserved, just properly formatted.
-
-````md
 # 🎬 Resolvify 1.0
 
 ## A (TESTED WORKING) Linux-only OBS to DaVinci Resolve video converter
@@ -127,13 +124,3 @@ Resolvify scans for:
 * `.mp4`
 * `.mkv`
 * `.mov`
-
-(case-insensitive)
-
-```
-
-If you want, I can also:
-- tighten this for a release page
-- add screenshots sections
-- or split CLI vs GUI docs cleanly
-```
