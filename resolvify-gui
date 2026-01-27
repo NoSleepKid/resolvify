@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+import os, subprocess, customtkinter as ctk
+from tkinter import filedialog
+
+class App(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+        self.title("Resolvify"); self.geometry("400x500")
+        self.path = ctk.StringVar(value="/mnt/synology/Keithens folder/OBS Output")
+        ctk.CTkLabel(self, text="Resolvify Pro", font=("Arial", 20, "bold")).pack(pady=20)
+        ctk.CTkButton(self, text="Pick Folder", command=lambda: self.path.set(filedialog.askdirectory() or self.path.get())).pack(pady=10)
+        ctk.CTkLabel(self, textvariable=self.path, wraplength=300).pack(pady=5)
+        self.q, self.d, self.o = ctk.BooleanVar(), ctk.BooleanVar(value=True), ctk.BooleanVar()
+        ctk.CTkCheckBox(self, text="Quick Mode", variable=self.q).pack(pady=5)
+        ctk.CTkCheckBox(self, text="Delete Sources", variable=self.d).pack(pady=5)
+        ctk.CTkCheckBox(self, text="Overnight Shutdown", variable=self.o).pack(pady=5)
+        ctk.CTkButton(self, text="LAUNCH IN KITTY", fg_color="green", command=self.go).pack(pady=30)
+    def go(self):
+        cmd = f"resolvify --path '{self.path.get()}'"
+        if self.q.get(): cmd += " --quick"
+        if self.d.get(): cmd += " --delete"
+        if self.o.get(): cmd += " --overnight"
+        subprocess.Popen(['kitty', 'bash', '-c', f"{cmd}; echo -e '\nDone! Press any key.'; read -n 1"])
+        self.iconify()
+if __name__ == "__main__": App().mainloop()
