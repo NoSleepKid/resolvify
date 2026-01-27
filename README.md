@@ -1,152 +1,87 @@
-🎬 Resolvify 1.6
+# 🎬 Resolvify 1.6
+## DaVinci Resolve stops crying. OBS footage behaves.
 
-Because DaVinci Resolve refusing your OBS footage is bullshit
+Have you ever recorded a video in OBS, imported it into DaVinci Resolve…  
+and Resolve just refuses to read it like it’s cursed?
 
-Have you ever recorded something clean in OBS, imported it into DaVinci Resolve…
-and Resolve just stares back like “nah”?
-Yeah. Same.
+Yeah. Same problem.  
+So I made **Resolvify**.
 
-Resolvify is a fast, safe, zero-BS video converter built around FFmpeg that turns OBS recordings into files Resolve actually likes.
+A fast, file-safe, FFmpeg-powered converter that turns OBS recordings into **Resolve-friendly `.mov` files** without nuking your data.
 
-Vibe coded. File-safe. Overnight-ready. 💾⚡
+⚠️ VIBE CODED WARNING ⚠️
 
-🧠 What This Does
+---
 
-Converts OBS videos into Resolve-friendly .mov files
+## 🧠 What This Does
 
-Uses DNxHR LB video codec (editor-approved)
+- Converts OBS recordings into **DaVinci Resolve–readable files**
+- Uses **DNxHR LB** video codec (editor approved)
+- Uses **PCM audio** (no desync, no bullshit)
+- Verifies outputs before deleting originals
+- Automatically cleans up failed conversions
+- Runs multiple conversions at once
+- Shows real progress bars and time remaining
+- Can shut your system down after an overnight run
 
-Uses uncompressed PCM audio (no weird audio bugs)
+---
 
-Auto-verifies output so broken files don’t slip through
+## 🧰 Features
 
-Deletes originals only after successful conversion
+### ✅ Resolve-Compatible Output
+- Codec: DNxHR LB
+- Pixel Format: yuv422p
+- Audio: pcm_s16le
+- Container: `.mov`
 
-Runs multiple conversions at once
+Resolve eats this instantly.
 
-Shows clean progress bars with real time remaining
+### ⚡ Quick Mode
+- Skips deep verification
+- Faster as hell
+- Best for trusted files
 
-Can shut your PC down after an overnight run
+### 🧪 Safe Mode (Default)
+- Verifies codec
+- Verifies duration
+- Verifies file integrity
+- No silent corruption
 
-🧰 Features Breakdown
-✅ Resolve Compatibility
+### 📁 Clean File Handling
+- Output goes into a `Done/` folder
+- Originals deleted **only after success**
+- Failed outputs are auto-removed
 
-DNxHR LB
+### 🧵 Multithreaded
+- Converts multiple videos at once
+- Keeps CPU busy, not stupid
 
-YUV 4:2:2
+### 🌙 Overnight Mode
+- Let it run while you sleep
+- Auto shutdown when finished
+- Wake up with free disk space
 
-PCM audio
-Resolve eats this shit up instantly.
+---
 
-⚡ Quick Mode
-
-Skips deep verification
-
-Perfect for trusted files
-
-Way faster
-
-🧪 Safe Mode (Default)
-
-Verifies codec
-
-Verifies duration
-
-Verifies file integrity
-No silent corruption. Ever.
-
-📁 Clean Output
-
-Converted files go into a Done/ folder
-
-Originals are deleted only after success
-
-Failed conversions are auto-cleaned
-
-🧵 Multithreaded
-
-Converts multiple videos at once
-
-No UI lag
-
-CPU stays busy, not stupid
-
-🌙 Overnight Mode
-
-Let it cook
-
-Auto shutdown when finished
-
-Wake up to free disk space
-
-📦 What It Works With
+## 📂 Supported Input Formats
 
 Scans for:
+- `.mp4`
+- `.mkv`
+- `.mov`
 
-.mp4
+(case-insensitive)
 
-.mkv
+---
 
-.mov
-(case insensitive)
+## 🖥 Requirements
 
-🖥 Requirements
+- Linux
+- Python 3
+- `ffmpeg`
+- `ffprobe`
+- `python-rich`
 
-Linux
-
-ffmpeg
-
-ffprobe
-
-Python 3
-
-python-rich
-
-Install rich (Arch):
-
+Install on Arch:
+```bash
 sudo pacman -S python-rich
-
-🚀 How To Use
-
-Run the script
-
-Enter a folder path (or press c for default)
-
-Pick Quick Mode or Safe Mode
-
-Optional overnight shutdown
-
-Let it rip 🎥
-
-🧨 Why This Exists
-
-OBS records fine.
-DaVinci Resolve is picky.
-This fixes that.
-Without sketchy GUIs.
-Without data loss.
-Without drama.
-
-⚠️ Warning
-
-This tool is:
-
-VIBE CODED
-
-Powerful
-
-Unapologetic
-
-Use it responsibly. Or don’t. 😈
-
-🏁 Final Note
-
-If Resolve ever says
-
-“Media Offline”
-
-Resolvify says
-
-“Bet.”
-
-Happy editing. 🖤💚
