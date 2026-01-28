@@ -30,8 +30,8 @@ If you enjoy porting tools, feel free to fork this project and make it cross-pla
 ### Install System Dependencies
 
 ```bash
-sudo pacman -S ffmpeg python-rich tk fakeroot debugedit make
-pip install customtkinter --break-system-packages
+sudo pacman -S ffmpeg tk fakeroot debugedit make python-pip
+pip install customtkinter rich --break-system-packages
 ````
 
 ---
