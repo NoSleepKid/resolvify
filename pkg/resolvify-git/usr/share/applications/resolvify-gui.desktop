@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Resolvify
-Comment=OBS to DaVinci Resolve video converter
-Exec=resolvify-gui
-Icon=video-x-generic
-Terminal=false
-Type=Application
-Categories=Video;Utility;
