@@ -28,11 +28,11 @@ package() {
   cd "$srcdir/resolvify"
 
   # CLI
-  install -Dm755 app/engine/resolvify \
+  install -Dm755 resolvify \
     "$pkgdir/usr/bin/resolvify"
 
   # GUI
-  install -Dm755 app/gui/resolvify-gui \
+  install -Dm755 resolvify-gui \
     "$pkgdir/usr/bin/resolvify-gui"
 
   # docs
