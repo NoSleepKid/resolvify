@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, subprocess, customtkinter as ctk
+import os, subprocess, shlex, customtkinter as ctk
 from tkinter import filedialog
 
 class App(ctk.CTk):
@@ -16,7 +16,7 @@ class App(ctk.CTk):
         ctk.CTkCheckBox(self, text="Overnight Shutdown", variable=self.o).pack(pady=5)
         ctk.CTkButton(self, text="LAUNCH IN KITTY", fg_color="green", command=self.go).pack(pady=30)
     def go(self):
-        cmd = f"resolvify --path '{self.path.get()}'"
+        cmd = f"resolvify --path {shlex.quote(self.path.get())}"
         if self.q.get(): cmd += " --quick"
         if self.d.get(): cmd += " --delete"
         if self.o.get(): cmd += " --overnight"
