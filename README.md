@@ -3,7 +3,7 @@
 > [!WARNING]
 > **This project is not intented for any other distribution than arch linux, or operating system.
 
-![Preview]()
+![Preview](https://raw.githubusercontent.com/NoSleepKid/resolvify/refs/heads/main/image.png)
 
 # Dependencies:
 ```bash```
