@@ -1,5 +1,5 @@
 pkgname=resolvify-git
-pkgver=36760f5
+pkgver=b37df0d
 pkgrel=1
 pkgdesc="Linux-only OBS to DaVinci Resolve video converter (CLI + GUI, with menu entry)"
 arch=('any')

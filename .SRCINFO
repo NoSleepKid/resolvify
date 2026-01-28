@@ -1,0 +1,18 @@
+pkgbase = resolvify-git
+	pkgdesc = Linux-only OBS to DaVinci Resolve video converter (CLI + GUI, with menu entry)
+	pkgver = 36760f5
+	pkgrel = 1
+	url = https://github.com/NoSleepKid/resolvify
+	arch = any
+	license = MIT
+	makedepends = git
+	makedepends = python-pip
+	depends = python
+	depends = tk
+	depends = ffmpeg
+	depends = glib2
+	depends = kitty
+	source = git+https://github.com/NoSleepKid/resolvify.git
+	sha256sums = SKIP
+
+pkgname = resolvify-git
