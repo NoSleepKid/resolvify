@@ -98,3 +98,4 @@ Resolvify scans for:
 * `.mp4`
 * `.mkv`
 * `.mov`
+
