@@ -10,7 +10,6 @@ depends=(
   "python"
   "tk"
   "ffmpeg"
-  "kitty"
 )
 
 optdepends=(
