@@ -30,46 +30,20 @@ If you enjoy porting tools, feel free to fork this project and make it cross-pla
 ### Install System Dependencies
 
 ```bash
-sudo pacman -S ffmpeg python-rich tk
+sudo pacman -S ffmpeg python-rich tk fakeroot debugedit make
 pip install customtkinter --break-system-packages
 ````
 
 ---
 
-### Setup the Scripts
-
-To run Resolvify from anywhere, place the scripts in `/usr/local/bin`.
-
-#### Make them executable
-
-```bash
-chmod +x resolvify resolvify-gui
+Clone the AUR repo:
+```
+git clone https://aur.archlinux.org/resolvify.git
+cd resolvify
+makepkg -si
 ```
 
-#### Move to system bin
-
-```bash
-sudo mv resolvify /usr/local/bin/
-sudo mv resolvify-gui /usr/local/bin/
-```
-
----
-
-### Create Desktop Shortcut
-
-To find Resolvify in your App Menu (KDE, GNOME, etc.), create the following file:
-
-`~/.local/share/applications/resolvify.desktop`
-
-```ini
-[Desktop Entry]
-Name=Resolvify
-Exec=/usr/local/bin/resolvify-gui
-Icon=video-x-generic
-Type=Application
-Terminal=false
-Categories=Video;
-```
+Ready to use!
 
 ---
 
