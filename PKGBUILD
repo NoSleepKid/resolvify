@@ -1,5 +1,5 @@
 pkgname=resolvify-git
-pkgver=1.0.r0.gHEAD
+pkgver=36760f5
 pkgrel=1
 pkgdesc="Linux-only OBS to DaVinci Resolve video converter (CLI + GUI, with menu entry)"
 arch=('any')
@@ -8,10 +8,12 @@ license=('MIT')
 
 depends=(
   'python'
+  'tk'          # tkinter support on Arch
   'ffmpeg'
   'glib2'
+  'kitty'       # required for GUI launcher
 )
-makedepends=('git')
+makedepends=('git' 'python-pip')
 
 source=("git+https://github.com/NoSleepKid/resolvify.git")
 sha256sums=('SKIP')
@@ -38,6 +40,15 @@ package() {
     "$pkgdir/usr/share/doc/$pkgname/README.md"
 
   # desktop entry
-  install -Dm644 app/gui/resolvify.desktop \
-    "$pkgdir/usr/share/applications/resolvify-gui.desktop"
+  mkdir -p "$pkgdir/usr/share/applications"
+  cat > "$pkgdir/usr/share/applications/resolvify-gui.desktop" <<'EOF'
+[Desktop Entry]
+Name=Resolvify
+Comment=OBS to DaVinci Resolve video converter
+Exec=resolvify-gui
+Icon=video-x-generic
+Terminal=false
+Type=Application
+Categories=Video;Utility;
+EOF
 }

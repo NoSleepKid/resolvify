@@ -1,11 +1,11 @@
 format = 2
 pkgname = resolvify-git
 pkgbase = resolvify-git
-pkgver = e02c362-1
+pkgver = 36760f5-1
 pkgarch = any
-pkgbuild_sha256sum = 1d24aa2a28abde6c80a275b4125975d2236bd62cdeef4291cd4e27b9e9c89fd9
+pkgbuild_sha256sum = 354ba849ccae28101dd1e25cbf2950781235ee02567da475091a334cd7686058
 packager = Unknown Packager
-builddate = 1769567492
+builddate = 1769567742
 builddir = /home/sleep/Documents/GitHub/resolvify
 startdir = /home/sleep/Documents/GitHub/resolvify
 buildtool = makepkg

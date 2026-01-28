@@ -3,12 +3,12 @@
 pkgname = resolvify-git
 pkgbase = resolvify-git
 xdata = pkgtype=pkg
-pkgver = e02c362-1
-pkgdesc = Linux-only OBS to DaVinci Resolve video converter (CLI + GUI)
+pkgver = 36760f5-1
+pkgdesc = Linux-only OBS to DaVinci Resolve video converter (CLI + GUI, with menu entry)
 url = https://github.com/NoSleepKid/resolvify
-builddate = 1769567492
+builddate = 1769567742
 packager = Unknown Packager
-size = 8467
+size = 7179
 arch = any
 license = MIT
 depend = python
