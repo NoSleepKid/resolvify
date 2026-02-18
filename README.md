@@ -11,7 +11,7 @@ Written in Python, minimal by design, and focused on producing clean `.mov` reco
 
 ## Preview
 
-![Preview](https://raw.githubusercontent.com/NoSleepKid/resolvify/refs/heads/main/image.png)
+![Preview](https://raw.githubusercontent.com/NoSleepKid/resolvify/refs/heads/main/2026-02-17_20-27-30.png)
 
 ---
 
