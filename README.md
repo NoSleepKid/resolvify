@@ -1,6 +1,6 @@
 # Resolvify
 
-**Resolvify** is a lightweight OBS-style screen recorder for **Arch Linux**, designed specifically to work smoothly with **DaVinci Resolve**.  
+**Resolvify** is a lightweight FFmpeg wrapper for **Arch Linux**, designed specifically to work smoothly with **DaVinci Resolve**.  
 Written in Python, minimal by design, and focused on producing clean `.mov` recordings without unnecessary overhead.
 
 > [!WARNING]  
