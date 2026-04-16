@@ -1,10 +1,10 @@
 pkgname=resolvify
 pkgver=1.0
-pkgrel=3
-pkgdesc="A tool to convert OBS (and other) recordings into DaVinci Resolve–compatible videos using FFmpeg."
+pkgrel=4
+pkgdesc="OBS → DaVinci Resolve DNxHR converter using FFmpeg"
 arch=("any")
 url="https://github.com/"
-license=("GNU GPLv3 or later")
+license=("GPL3")
 
 depends=(
   "python"
@@ -13,13 +13,19 @@ depends=(
 )
 
 optdepends=(
-  "python-rich: pretty CLI progress output (pip install rich)"
-  "python-customtkinter: GUI support (pip install customtkinter)"
+  "python-rich: CLI progress UI"
+  "python-customtkinter: GUI support"
 )
 
 source=("resolvify")
+
 sha256sums=("SKIP")
 
+prepare() {
+  # hard safety patch so broken versions never ship again
+  sed -i 's/no_wrap=False//g' resolvify
+}
+
 package() {
-  install -Dm755 "$srcdir/resolvify" "$pkgdir/usr/bin/resolvify"
+  install -Dm755 resolvify "$pkgdir/usr/bin/resolvify"
 }
